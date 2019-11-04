@@ -8,7 +8,8 @@ module.exports = {
     'eslint:recommended',
     'plugin:prettier/recommended',
     'plugin:react/recommended',
-    'plugin:jest/recommended'
+    'plugin:jest/recommended',
+    'react-app'
   ],
   globals: {
     Atomics: 'readonly',
