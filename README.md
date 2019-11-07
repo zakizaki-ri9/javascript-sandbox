@@ -2,7 +2,7 @@ JavaScript系のお試しリポジトリ
 
 ---
 
-# [chrome-extension-sample](./javascript-sandbox/chrome-extension-sample)
+# [chrome-extension-sample](./chrome-extension-sample)
 
 Chrome拡張機能のお試し
 
