@@ -1,12 +1,12 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const path = require("path");
-const outputPath = path.resolve(__dirname, "dist");
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const path = require('path')
+const outputPath = path.resolve(__dirname, 'dist')
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: './src/index.js',
   output: {
-    filename: "bundle.js",
+    filename: 'bundle.js',
     path: outputPath
   },
   module: {
@@ -15,13 +15,13 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
-          options: { presets: ["@babel/preset-env", "@babel/preset-react"] }
+          loader: 'babel-loader',
+          options: { presets: ['@babel/preset-env', '@babel/preset-react'] }
         }
       },
       {
         test: /\.html$/,
-        use: { loader: "html-loader" }
+        use: { loader: 'html-loader' }
       }
     ]
   },
@@ -31,7 +31,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: "./src/index.html"
+      template: './src/index.html'
     })
   ]
-};
+}
