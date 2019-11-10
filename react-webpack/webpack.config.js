@@ -9,6 +9,9 @@ module.exports = {
     filename: 'bundle.js',
     path: outputPath
   },
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   module: {
     rules: [
       {
@@ -16,7 +19,14 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: { presets: ['@babel/preset-env', '@babel/preset-react'] }
+          options: {
+            presets: [
+              '@babel/preset-env',
+              '@babel/preset-react',
+              '@emotion/babel-preset-css-prop'
+            ],
+            plugins: ['emotion']
+          }
         }
       },
       {
