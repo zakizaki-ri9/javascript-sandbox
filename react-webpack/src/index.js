@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import HoverBox from './animation/hoverBox'
+import HoverMenu from './animation/HoverMenu'
 
 ReactDOM.render(
   <div>
-    <HoverBox />
+    <HoverMenu />
   </div>,
   document.getElementById('root')
 )
