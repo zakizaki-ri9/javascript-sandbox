@@ -13,14 +13,14 @@
       </md-toolbar>
 
       <md-list>
-        <div>
-          <md-list-item>
-            <md-icon>pan_tool</md-icon>
-            <router-link to="/helloworld" @click.native="menuVisible = false">
-              <span class="md-list-item-text">HelloWorld</span>
+        <template v-for="(menu, i) in menus">
+          <md-list-item v-if="!!menu.label" :key="i">
+            <md-icon>{{ menu.mdIcon }}</md-icon>
+            <router-link :to="menu.path" @click.native="menuVisible = false">
+              <span class="md-list-item-text">{{ menu.label }}</span>
             </router-link>
           </md-list-item>
-        </div>
+        </template>
       </md-list>
     </md-app-drawer>
 
@@ -31,10 +31,16 @@
 </template>
 
 <script>
+import { routes } from './router'
 export default {
   data() {
     return {
       menuVisible: false
+    }
+  },
+  computed: {
+    menus() {
+      return routes
     }
   }
 }
