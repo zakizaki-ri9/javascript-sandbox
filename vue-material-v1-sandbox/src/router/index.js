@@ -7,8 +7,6 @@ import HelloWorld from '../components/pages/HelloWorld'
 
 const routes = [{ path: '/helloworld', component: HelloWorld }]
 
-const router = new Router({
+export default new Router({
   routes
 })
-
-export default router

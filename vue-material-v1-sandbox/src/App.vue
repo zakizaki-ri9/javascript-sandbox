@@ -7,7 +7,7 @@
       <span class="md-title">Vue Material v1 Practice</span>
     </md-app-toolbar>
 
-    <md-app-drawer :md-active.sync="menuVisible">
+    <md-app-drawer :md-active.sync="menuVisible" style="width: 300px;">
       <md-toolbar class="md-transparent" md-elevation="0">
         SideNav
       </md-toolbar>
