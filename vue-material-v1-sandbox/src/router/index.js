@@ -3,8 +3,8 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-import HelloWorld from '../components/pages/HelloWorld'
-import MdFieldTest from '../components/pages/MdFieldTest'
+import HelloWorld from '@/components/pages/HelloWorld'
+import MdFieldTest from '@/components/pages/MdFieldTest'
 
 const routes = [
   {
