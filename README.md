@@ -88,3 +88,101 @@ React x webpackで最小限な環境づくりを目指すリポジトリ
   - [webpack習得](https://www.udemy.com/course/webpack-crash-course)
 - Qiita
   - [Webpack4とBabel(ES6)を使う](https://qiita.com/asylum/items/32415608354028684c05)
+
+# [vue-material-v1-sandbox](./vue-material-v1-sandbox)
+
+VueMaterial v1.x系のお試し
+
+## [vue-material](https://vuematerial.io)系のメモ
+
+### 導入方法
+
+```bash
+# インストール
+npm i vue-material
+```
+
+```javascript
+// vue-materialの導入
+import Vue from 'vue'
+import VueMaterial from 'vue-material'
+
+// スタイル反映
+import 'vue-material/dist/vue-material.min.css'
+import 'vue-material/dist/theme/default-dark.css'
+
+Vue.use(VueMaterial)
+```
+
+## vee-validate系のメモ
+
+### 導入
+
+```bash
+# インストール
+npm i vee-validate
+```
+
+```javascript
+import Vue from 'vue'
+import { ValidationObserver, ValidationProvider, extend } from 'vee-validate'
+
+// ルールの追加
+extend('required', {
+  validate(value) {
+    return {
+      required: true,
+      valid: ['', null, undefined].indexOf(value) === -1
+    }
+  },
+  computesRequired: true
+})
+
+Vue.component('ValidationObserver', ValidationObserver)
+Vue.component('ValidationProvider', ValidationProvider)
+```
+
+### 使用例
+
+```html
+<template>
+  <validation-observer v-slot="{ handleSubmit }">
+    <form @submit.prevent="handleSubmit(submit)">
+      <validation-provider name="email" rules="required" v-slot="{ errors }">
+        <md-field :class="mdFieldClass(errors)"
+          ><label>Vee-Validate Required</label>
+          <md-input name="email" v-model="field.email" required></md-input>
+          <span class="md-error">{{ errors[0] }}</span>
+        </md-field>
+      </validation-provider>
+    </form>
+  </validation-observer>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      field: {
+        email: ''
+      }
+    }
+  },
+  methods: {
+    submit() {},
+    mdFieldClass(errors) {
+      return {
+        'md-invalid': errors.length > 0
+      }
+    }
+  }
+}
+</script>
+```
+
+# 参考記事
+
+- VueMaterial
+  - https://vuematerial.io
+- VeeValidate
+  - https://logaretm.github.io/vee-validate/

@@ -1,24 +1,11 @@
 # vue-material-v1-sandbox
 
-## Project setup
-```
-npm install
-```
+**動作確認方法**
 
-### Compiles and hot-reloads for development
-```
+```bash
+# インストール
+npm install
+
+# 起動
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

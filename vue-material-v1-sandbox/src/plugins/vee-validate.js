@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import { ValidationObserver, ValidationProvider, extend } from 'vee-validate'
 
+// ルールの追加
 extend('required', {
   validate(value) {
     return {
