@@ -1,4 +1,4 @@
-let { graphql, buildSchema } = require("graphql");
+const { graphql, buildSchema } = require("graphql");
 
 // スキーマを定義
 let schema = buildSchema(`
