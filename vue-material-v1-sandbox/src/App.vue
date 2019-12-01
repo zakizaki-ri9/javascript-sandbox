@@ -7,21 +7,7 @@
       <span class="md-title">Vue Material v1 Practice</span>
     </md-toolbar>
     <div class="base flex" :style="baseStyles">
-      <md-drawer md-permanent="clipped" v-if="menuVisible">
-        <md-toolbar class="md-transparent" md-elevation="0">SideNav</md-toolbar>
-
-        <md-list>
-          <template v-for="(menu, i) in menus">
-            <md-list-item v-if="!!menu.label" :key="i">
-              <md-icon>{{ menu.mdIcon }}</md-icon>
-              <router-link :to="menu.path" @click.native="menuVisible = false">
-                <span class="md-list-item-text">{{ menu.label }}</span>
-              </router-link>
-            </md-list-item>
-          </template>
-        </md-list>
-      </md-drawer>
-
+      <side-nav v-if="menuVisible" @menuclick="onMenuClicked" />
       <div class="container">
         <router-view />
       </div>
@@ -30,8 +16,11 @@
 </template>
 
 <script>
-import { routes } from './router'
+import SideNav from './components/global/SideNav'
 export default {
+  components: {
+    SideNav
+  },
   data() {
     return {
       menuVisible: false,
@@ -39,9 +28,6 @@ export default {
     }
   },
   computed: {
-    menus() {
-      return routes
-    },
     /**
      * div.base.flex のスタイル
      * @returns {Object}
@@ -59,6 +45,9 @@ export default {
   methods: {
     onWindowResize() {
       this.toolbarHeight = this.$refs.toolbar.$el.clientHeight
+    },
+    onMenuClicked() {
+      this.menuVisible = false
     }
   },
   mounted() {
