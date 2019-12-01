@@ -1,37 +1,13 @@
 <template>
-  <!-- <main>
-    <md-toolbar class="md-primary">
+  <main style="height: 100vh; width: 100%;">
+    <md-toolbar class="md-primary" ref="toolbar">
       <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
         <md-icon>menu</md-icon>
       </md-button>
       <span class="md-title">Vue Material v1 Practice</span>
     </md-toolbar>
-
-    <md-drawer :md-active.sync="menuVisible" style="width: 300px;">
-      <md-toolbar class="md-transparent" md-elevation="0">SideNav</md-toolbar>
-
-      <md-list>
-        <template v-for="(menu, i) in menus">
-          <md-list-item v-if="!!menu.label" :key="i">
-            <md-icon>{{ menu.mdIcon }}</md-icon>
-            <router-link :to="menu.path" @click.native="menuVisible = false">
-              <span class="md-list-item-text">{{ menu.label }}</span>
-            </router-link>
-          </md-list-item>
-        </template>
-      </md-list>
-    </md-drawer>
-
-    <md-content class="container">
-      <router-view />
-    </md-content>
-  </main>-->
-  <main style="height: 100vh; width: 100%;">
-    <md-toolbar class="md-primary" ref="toolbar">
-      <span class="md-title">Vue Material v1 Practice</span>
-    </md-toolbar>
     <div class="base flex" :style="baseStyles">
-      <md-drawer md-permanent="clipped">
+      <md-drawer md-permanent="clipped" v-if="menuVisible">
         <md-toolbar class="md-transparent" md-elevation="0">SideNav</md-toolbar>
 
         <md-list>
@@ -86,11 +62,11 @@ export default {
     }
   },
   mounted() {
-    window.addEventListener('resize', this.onWindowResize)
+    this.$refs.toolbar.$el.addEventListener('resize', this.onWindowResize)
     this.onWindowResize()
   },
   beforeDestroy() {
-    window.removeEventListener('resize', this.onWindowResize)
+    this.$refs.toolbar.$el.removeEventListener('resize', this.onWindowResize)
   }
 }
 </script>
