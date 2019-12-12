@@ -1,16 +1,9 @@
 import Vue from 'vue'
-import { ValidationObserver, ValidationProvider, extend } from 'vee-validate'
+import { ValidationObserver, localize } from 'vee-validate'
+import { ValidationProvider } from 'vee-validate/dist/vee-validate.full.esm' // ルールが全て登録されたValidationProviderをインポート
+import ja from 'vee-validate/dist/locale/ja'
 
-// ルールの追加
-extend('required', {
-  validate(value) {
-    return {
-      required: true,
-      valid: ['', null, undefined].indexOf(value) === -1
-    }
-  },
-  computesRequired: true
-})
+localize('ja', ja)
 
 Vue.component('ValidationObserver', ValidationObserver)
 Vue.component('ValidationProvider', ValidationProvider)
