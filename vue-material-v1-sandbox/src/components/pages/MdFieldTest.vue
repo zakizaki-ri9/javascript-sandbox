@@ -29,6 +29,13 @@
             <span class="md-error">{{ errors[0] }}</span>
           </md-field>
         </validation-provider>
+        <p>
+          md-checkboxはv-modelを指定しない場合、チェックの切り替わりが発生しない
+        </p>
+        <md-layout>
+          <md-checkbox value="1">Array</md-checkbox>
+          <md-checkbox value="2">Array</md-checkbox>
+        </md-layout>
       </div>
     </form>
   </validation-observer>
