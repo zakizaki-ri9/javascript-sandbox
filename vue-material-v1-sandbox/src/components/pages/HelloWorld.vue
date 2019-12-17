@@ -87,9 +87,18 @@
 </template>
 
 <script>
+/**
+ * @vuese
+ * @group pages
+ * ハローワールドページ
+ */
 export default {
   props: {
-    msg: String
+    // 見出し `h1` で表示するメッセージ
+    msg: {
+      type: [String, Number],
+      default: 'Hello World'
+    }
   }
 }
 </script>

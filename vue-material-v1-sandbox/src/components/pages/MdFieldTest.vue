@@ -1,5 +1,6 @@
 <template>
   <validation-observer v-slot="{ handleSubmit }">
+    <h1>{{ title }}</h1>
     <form @submit.prevent="handleSubmit(submit)">
       <div>
         <md-field>
@@ -42,9 +43,16 @@
 </template>
 
 <script>
+/**
+ * @vuese
+ * @group pages
+ * `vue-material` の `md-field` 系お試しページ
+ */
 export default {
+  name: 'MdFieldTest',
   data() {
     return {
+      title: 'MdFieldTest',
       field: {
         free: '',
         readOnly: 'read only value',

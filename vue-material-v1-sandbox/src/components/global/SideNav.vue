@@ -20,8 +20,15 @@
 
 <script>
 import { routes } from '../../router'
+
+/**
+ * @vuese
+ * @group global
+ * サイドバー
+ */
 export default {
   props: {
+    // `md-permanent` に指定する値
     permanent: {
       type: String,
       default: 'clipped'
@@ -34,6 +41,10 @@ export default {
   },
   methods: {
     onRouterLinkClicked(menu) {
+      /**
+       * @arg `router/index.js` に定義されているオブジェクト
+       * メニューアイテムがクリックされた際の処理
+       */
       this.$emit('menuclick', menu)
     }
   }
