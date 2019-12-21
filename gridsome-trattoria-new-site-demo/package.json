@@ -8,16 +8,17 @@
     "lint-fix": "eslint --ext .js,.vue --fix src"
   },
   "dependencies": {
-    "gridsome": "^0.7.0"
+    "gridsome": "^0.7.12"
   },
   "devDependencies": {
-    "eslint": "^6.7.2",
+    "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-gridsome": "^1.4.0",
-    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-prettier-vue": "^2.0.2",
     "eslint-plugin-vue": "^6.0.1",
-    "now": "^16.6.0",
+    "now": "^16.7.0",
+    "npm-check-updates": "^4.0.1",
     "prettier": "^1.19.1"
   }
 }
