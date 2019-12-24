@@ -16,6 +16,10 @@
     <div class="md-content md-table md-theme-default">
       <div class="md-content md-table-content md-scrollbar md-theme-default">
         <draggable tag="table" v-model="objectList">
+          <tr slot="header">
+            <th>first</th>
+            <th>last</th>
+          </tr>
           <tr
             v-for="(obj, index) in objectList"
             :key="index"
