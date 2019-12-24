@@ -10,6 +10,7 @@ import 'ress'
 // plugin系のインポート
 import '@/plugins/vue-material'
 import '@/plugins/vee-validate'
+import '@/plugins/vuedraggable'
 
 new Vue({
   el: '#app',
