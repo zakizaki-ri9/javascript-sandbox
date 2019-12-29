@@ -1,20 +1,26 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Top from '@/pages/Top.vue'
-import LeafletMap from '@/pages/Map.vue'
+import LeafletMap from '@/pages/LeafletMap.vue'
 
 Vue.use(VueRouter)
 
-const routes = [
+export const routes = [
   {
     path: '/',
     name: 'top',
-    component: Top
+    component: Top,
+    title: 'Top'
   },
   {
     path: '/map',
     name: 'map',
-    component: LeafletMap
+    component: LeafletMap,
+    title: 'Map'
+  },
+  {
+    path: '*',
+    component: Top
   }
 ]
 

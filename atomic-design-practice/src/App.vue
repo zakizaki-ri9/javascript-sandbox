@@ -2,17 +2,14 @@
   <v-app>
     <v-navigation-drawer v-model="drawer" app>
       <v-list dense nav>
-        <v-list-item link>
+        <v-list-item
+          v-for="(route, index) in navigationRoutes"
+          :key="index"
+          link
+        >
           <v-list-item-content>
             <v-list-item-title>
-              <router-link to="/">Top</router-link>
-            </v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-content>
-            <v-list-item-title>
-              <router-link to="/map">Map</router-link>
+              <router-link :to="route.path">{{ route.title }}</router-link>
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
@@ -30,11 +27,24 @@
 </template>
 
 <script lang="ts">
+import { routes } from '@/router'
 import { Component, Vue } from 'vue-property-decorator'
 
 @Component
 export default class App extends Vue {
   drawer = false
+
+  get navigationRoutes(): { path: string; title: string }[] | [] {
+    const filteredRoutes = routes
+      .filter(route => !!route.title)
+      .map(route => {
+        return {
+          path: route.path,
+          title: route.title || ''
+        }
+      })
+    return filteredRoutes || []
+  }
 }
 </script>
 
