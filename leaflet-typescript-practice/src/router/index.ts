@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Top from '@/pages/Top.vue'
-import LeafletMap from '@/pages/LeafletMap.vue'
+import Top from '@/views/Top.vue'
+import ClickMap from '@/views/ClickMap.vue'
 
 Vue.use(VueRouter)
 
@@ -13,10 +13,10 @@ export const routes = [
     title: 'Top'
   },
   {
-    path: '/map',
-    name: 'map',
-    component: LeafletMap,
-    title: 'Map'
+    path: '/ClickMap',
+    name: 'ClickMap',
+    component: ClickMap,
+    title: 'ClickMap'
   },
   {
     path: '*',
