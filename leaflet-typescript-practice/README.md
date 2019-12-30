@@ -1,4 +1,4 @@
-# atomic-design-practice
+# leaflet-typescript-practice
 
 ## Project setup
 ```
