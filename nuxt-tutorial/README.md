@@ -1,22 +1,67 @@
-# nuxt-tutorial
 
-> My stylish Nuxt.js project
+# nuxtのお試しリポジトリ
 
-## Build Setup
+## [ディレクトリ構造](https://ja.nuxtjs.org/guide/directory-structure)
 
-``` bash
-# install dependencies
-$ npm run install
+### [assets](./assets)
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+非コンパイルファイルを格納する。
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+- Stylus
+- Sass
+- Image
+- Font
+- etc...
 
-# generate static project
-$ npm run generate
-```
+### [components](./components)
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+コンポーネントVueファイルを格納する。
+
+### [layouts](./layouts)
+
+ヘッダー・サイドバー等のレイアウト系ファイルを格納する。
+
+### [middleware](./middleware)
+
+レンダリング前に事項するかkスタム関数を定義する。
+
+- サーバサイドの挙動
+  - 最初のリクエスト
+  - ページ再読み込み時
+  - etc...
+- クライアントサイドの挙動
+  - ルーティング
+  - etc...
+
+#### 実行順序
+
+1. `nuxt.config.js`のファイル内順
+2. マッチしたレイアウト
+3. マッチしたページ
+
+非同期実行も可能。
+
+- [Nuxt.js - middlewareについて](https://ja.nuxtjs.org/guide/routing/#%E3%83%9F%E3%83%89%E3%83%AB%E3%82%A6%E3%82%A7%E3%82%A2)
+
+### [pages](./pages)
+
+ビュー・ルーティングファイルを格納する。
+
+### [plugins](./plugins)
+
+以下の用途で使用するファイルを格納する。
+
+- アプリケーションのインスタンス化前に実行したい内容
+- グローバルコンポーネントの登録
+
+### [static](./static)
+
+サーバのルートに配置されるファイルを格納する。
+
+### [store](./store)
+
+Vuexストアのファイルを格納する。
+
+# 参考文献
+
+- [公式ページ](https://ja.nuxtjs.org/)
