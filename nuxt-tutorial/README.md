@@ -62,6 +62,22 @@
 
 Vuexストアのファイルを格納する。
 
+## [設定](https://ja.nuxtjs.org/guide/configuration)
+
+- Nuxt.jsでは、[`nuxt.config.js`](./nuxt.config.js)にビルド等の情報を記載する
+- 設定する情報はざっくり以下
+  - ビルド
+  - グローバルCSS
+  - 開発環境
+  - 環境変数
+  - 静的サイトを生成する際の情報
+  - メタタグ
+  - [Nuxtモジュール](https://ja.nuxtjs.org/api/configuration-modules/)
+  - ルーティング
+  - サーバー設定
+  - ディレクトリ構成のカスタマイズ
+  - 非同期処理の設定
+
 # 参考文献
 
 - [公式ページ](https://ja.nuxtjs.org/)
