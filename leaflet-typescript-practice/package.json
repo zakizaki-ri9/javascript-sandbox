@@ -30,7 +30,9 @@
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$"
   },
   "dependencies": {
+    "axios": "^0.19.1",
     "core-js": "^3.4.3",
+    "dayjs": "^1.8.19",
     "leaflet": "^1.6.0",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
