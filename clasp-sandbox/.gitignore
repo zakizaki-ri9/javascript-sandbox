@@ -112,3 +112,6 @@ temp/
 
 # clasp
 .clasp.json
+
+# vscode
+.vscode
