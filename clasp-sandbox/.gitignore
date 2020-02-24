@@ -115,3 +115,7 @@ temp/
 
 # vscode
 .vscode
+
+# lefthook
+lefthook-local.yml
+/.lefthook-local/
