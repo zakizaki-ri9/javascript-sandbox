@@ -34,7 +34,23 @@ module.exports = {
       },
       plugins: ['@typescript-eslint'],
       rules: {
-        // TypeScript系のファイルに対しての設定を行う
+        '@typescript-eslint/member-delimiter-style': [
+          'error',
+          {
+            multiline: {
+              delimiter: 'none',
+              requireLast: false
+            },
+            singleline: {
+              delimiter: 'comma',
+              requireLast: false
+            }
+          }
+        ],
+        '@typescript-eslint/interface-name-prefix': [
+          'error',
+          { prefixWithI: 'always' }
+        ]
       }
     }
   ]
