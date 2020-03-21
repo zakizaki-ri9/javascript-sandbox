@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "Scrapbox Timeline Bookmark",
+  "short_name": "STB",
+  "version": "1.0",
+  "description": "気になったWebページをScrapboxへタイムライン形式で保存します。",
+  "default_locale": "ja_JP",
+  "background": {
+    "scripts": ["src/background.js"]
+  },
+  "permissions": ["tabs", "contextMenus"]
+}
