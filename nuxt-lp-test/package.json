@@ -4,11 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nuxt"
+    "dev": "nuxt-ts",
+    "build": "nuxt-ts build",
+    "start": "nuxt-ts start",
+    "generate": "nuxt-ts generate"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@nuxt/typescript-runtime": "^0.4.1",
     "nuxt": "^2.12.1"
   },
   "devDependencies": {
