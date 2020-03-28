@@ -1,11 +1,16 @@
 <template>
-  <h1>Hello Nuxt.js</h1>
+  <h1>{{ title }}</h1>
 </template>
 
-<script>
-export default {
-
-}
+<script lang="ts">
+import Vue from 'vue'
+export default Vue.extend({
+  computed: {
+    title(): string {
+      return 'Hello Nuxt.js'
+    }
+  }
+})
 </script>
 
 <style>
