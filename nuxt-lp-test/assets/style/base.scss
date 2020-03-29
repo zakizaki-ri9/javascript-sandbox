@@ -1,0 +1,52 @@
+:root {
+  /* main colors */
+  --color-primary: #b32034;
+  --color-secondary: #d399a2;
+  --color-text: #333333;
+  --color-bg: #e3e3e3;
+}
+
+@font-face {
+  font-family: "NotoSansJP-Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("NotoSansJP-Regular"),
+    url("~assets/font/NotoSansJP-Regular.otf") format("otf");
+}
+
+body {
+  font-family: "NotoSansJP-Regular", sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+h1 {
+  color: var(--color-primary);
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-secondary);
+}
+
+.el_btn {
+  display: inline-block;
+  min-width: 200px;
+  max-width: 100%;
+  padding: 20px 10px;
+  background-color: var(--color-bg);
+  border-style: solid;
+  color: var(--color-text);
+  font-size: 1.125rem;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.25s;
+  &:hover,
+  &:focus {
+    border-color: currentColor;
+    box-shadow: 0 3px 6px var(--color-text);
+  }
+}
