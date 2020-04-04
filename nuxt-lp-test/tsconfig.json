@@ -11,19 +11,9 @@
     "noEmit": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./*"],
-      "@/*": ["./*"]
-    },
-    "types": ["@types/node", "@nuxt/types"]
+      "~/*": ["src/*"],
+      "@/*": ["src/*"]
+    }
   },
-  "files": ["vue-shim.d"],
-  "include": [
-    "components/**/*.ts",
-    "components/**/*.vue",
-    "layouts/**/*.ts",
-    "layouts/**/*.vue",
-    "pages/**/*.ts",
-    "pages/**/*.vue"
-  ],
   "exclude": ["node_modules"]
 }
