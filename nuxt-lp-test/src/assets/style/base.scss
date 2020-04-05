@@ -25,7 +25,7 @@ body {
   width: 200px;
   max-width: 100%;
   padding: 20px 10px;
-  background-color: var(--color-text);
+  background-color: var(--color-primary);
   color: var(--color-bg);
   border: 2px solid transparent;
   border-radius: 10px;
@@ -35,21 +35,23 @@ body {
   transition: 0.25s;
   &:hover,
   &:focus {
+    background-color: var(--color-bg);
+    color: var(--color-primary);
     border-color: currentColor;
-    box-shadow: 0 3px 6px var(--color-text);
     cursor: pointer;
   }
 }
 
 .el_tag {
   display: inline-block;
-  padding: 0.2em 0.3em;
+  padding: 0.3em 0.9em;
   border: 2px solid transparent;
+  border-radius: 1em;
   font-size: 0.75em;
   font-weight: bold;
   text-decoration: none;
   transition: 0.25s;
-  background-color: var(--color-primary);
+  background-color: var(--color-text);
   color: var(--color-bg);
 }
 
@@ -58,7 +60,7 @@ a {
     &:hover,
     &:focus {
       background-color: var(--color-bg);
-      color: var(--color-primary);
+      color: var(--color-text);
       border-color: currentColor;
     }
   }
