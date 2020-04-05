@@ -1,35 +1,23 @@
 :root {
   /* main colors */
-  --color-primary: #b32034;
-  --color-secondary: #d399a2;
-  --color-text: #333333;
-  --color-bg: #e3e3e3;
+  --color-primary: #00b3ff;
+  --color-secondary: #80d9ff;
+  --color-text: #3f3f3f;
+  --color-bg: #f0f0f0;
 }
 
 @font-face {
-  font-family: "NotoSansJP-Regular";
+  font-family: 'NotoSansJP-Regular';
   font-style: normal;
   font-weight: normal;
-  src: local("NotoSansJP-Regular"),
-    url("~assets/font/NotoSansJP-Regular.otf") format("otf");
+  src: local('NotoSansJP-Regular'),
+    url('~assets/font/NotoSansJP-Regular.otf') format('otf');
 }
 
 body {
-  font-family: "NotoSansJP-Regular", sans-serif;
+  font-family: 'NotoSansJP-Regular', sans-serif;
   background-color: var(--color-bg);
   color: var(--color-text);
-}
-
-h1 {
-  color: var(--color-primary);
-}
-
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--color-secondary);
 }
 
 .el_btn {
@@ -37,10 +25,11 @@ h6 {
   width: 200px;
   max-width: 100%;
   padding: 20px 10px;
-  background-color: var(--color-bg);
-  border-style: solid;
-  color: var(--color-text);
-  font-size: 1.125rem;
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  font-size: 1.15rem;
   text-align: center;
   text-decoration: none;
   transition: 0.25s;
@@ -48,5 +37,29 @@ h6 {
   &:focus {
     border-color: currentColor;
     box-shadow: 0 3px 6px var(--color-text);
+    cursor: pointer;
+  }
+}
+
+.el_tag {
+  display: inline-block;
+  padding: 0.2em 0.3em;
+  border: 2px solid transparent;
+  font-size: 0.75em;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.25s;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+a {
+  &.el_tag {
+    &:hover,
+    &:focus {
+      background-color: var(--color-bg);
+      color: var(--color-primary);
+      border-color: currentColor;
+    }
   }
 }

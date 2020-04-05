@@ -1,5 +1,5 @@
 <template>
-  <a class="tag_link" :href="href">
+  <a class="el_tag" :href="href">
     {{ text }}
   </a>
 </template>
@@ -20,16 +20,4 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss" module>
-.tag_link {
-  border: 2px solid transparent;
-  text-decoration: none;
-  transition: 0.25s;
-  &:focus,
-  &:hover {
-    border-color: currentColor;
-    background-color: white;
-    color: var(--color-text);
-  }
-}
-</style>
+<style lang="scss" module></style>
