@@ -1,43 +1,39 @@
 module.exports = {
+  root: true,
   env: {
+    node: true,
     browser: true,
     es6: true,
-    node: true
   },
+  parser: "vue-eslint-parser",
+  parserOptions: {
+    parser: "@typescript-eslint/parser",
+    sourceType: "module",
+    ecmaVersion: 2018,
+  },
+  plugins: [
+    '@typescript-eslint',
+    'prettier',
+    'vue',
+    'gridsome',
+  ],
   extends: [
     'eslint:recommended',
-    'plugin:gridsome/recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
     'plugin:vue/recommended',
-    'plugin:prettier-vue/recommended',
-    'prettier/vue'
+    'plugin:gridsome/recommended',
+    'plugin:prettier/recommended',
+    'prettier/@typescript-eslint',
+    'prettier/vue',
   ],
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly'
-  },
-  parserOptions: {
-    ecmaVersion: 2018,
-    sourceType: 'module'
-  },
-  plugins: ['gridsome', 'prettier'],
-  overrides: [
-    {
-      files: ['**/*.js'],
-      rules: {
-        'prettier/prettier': 'error'
+  rules: {
+    'prettier/prettier': ['error',
+      {
+        semi: false,
+        singleQuote: true,
+        trailingComma: 'none',
       }
-    },
-    {
-      files: ['**/*.vue'],
-      rules: {
-        'prettier-vue/prettier': [
-          'error',
-          {
-            singleQuote: true,
-            semi: false
-          }
-        ]
-      }
-    }
-  ]
+    ]
+  },
 }
