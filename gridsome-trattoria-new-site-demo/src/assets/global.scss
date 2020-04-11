@@ -1,0 +1,75 @@
+:root {
+  /* main colors */
+  --color-primary: #00b3ff;
+  --color-secondary: #80d9ff;
+  --color-text: #3f3f3f;
+  --color-bg: #f0f0f0;
+}
+
+@font-face {
+  font-family: "Yu Gothic M";
+  src: local("Yu Gothic Medium");
+}
+@font-face {
+  font-family: "Yu Gothic M";
+  src: local("Yu Gothic Bold");
+  font-weight: bold;
+}
+
+html {
+  font-family: YuGothic, /* For Mac */ "Yu Gothic M", "Yu Gothic Medium",
+    /* For Windows Firefox, Edge, IE */ "Hiragino Kaku Gothic ProN",
+    "Hiragino Kaku Gothic Pro", /* For Mac Fallback */ Meiryo,
+    /* For Windows Fallback (Chrome) */ sans-serif;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.el_btn {
+  display: inline-block;
+  width: 200px;
+  max-width: 100%;
+  padding: 20px 10px;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  font-size: 1.15rem;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.25s;
+  &:hover,
+  &:focus {
+    background-color: var(--color-bg);
+    color: var(--color-primary);
+    border-color: currentColor;
+    cursor: pointer;
+  }
+}
+
+.el_tag {
+  display: inline-block;
+  padding: 0.3em 0.9em;
+  border: 2px solid transparent;
+  border-radius: 1em;
+  font-size: 0.75em;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.25s;
+  background-color: var(--color-text);
+  color: var(--color-bg);
+}
+
+a {
+  &.el_tag {
+    &:hover,
+    &:focus {
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      border-color: currentColor;
+    }
+  }
+}

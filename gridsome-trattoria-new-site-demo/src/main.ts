@@ -1,3 +1,5 @@
+import 'normalize.css'
+import '~/assets/global.scss'
 import DefaultLayout from '~/layouts/Default.vue'
 
 export default function (Vue: any) {
