@@ -1,8 +1,14 @@
 <template>
   <div>
+    <header-menu>
+      <a href="#">サンプル1</a>
+      <a href="#">サンプル2</a>
+    </header-menu>
     <h1>{{ title }}</h1>
-    <PrimaryButton>test</PrimaryButton>
-    <TagLink text="test" href="/" />
+    <primary-button>
+      test
+    </primary-button>
+    <tag-link text="test" href="/" />
   </div>
 </template>
 
@@ -10,11 +16,13 @@
 import Vue from 'vue'
 import PrimaryButton from '~/components/atoms/PrimaryButton.vue'
 import TagLink from '~/components/atoms/TagLink.vue'
+import HeaderMenu from '~/components/atoms/HeaderMenu.vue'
 
 export default Vue.extend({
   components: {
     PrimaryButton,
     TagLink,
+    HeaderMenu,
   },
   computed: {
     title(): string {
