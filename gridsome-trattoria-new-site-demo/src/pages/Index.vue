@@ -1,9 +1,9 @@
 <template>
   <Layout>
+    <g-h1>Hello, world!</g-h1>
+
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
     <g-image alt="Example image" src="~/favicon.png" width="135" />
-
-    <h1>Hello, world!</h1>
 
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur
@@ -26,11 +26,16 @@
 </template>
 
 <script>
-export default {
+import Vue from 'vue'
+import GH1 from '~/components/atmos/GH1.vue'
+export default Vue.extend({
+  components: {
+    GH1
+  },
   metaInfo: {
     title: 'Hello, world!'
   }
-}
+})
 </script>
 
 <style></style>

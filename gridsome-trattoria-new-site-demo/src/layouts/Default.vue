@@ -1,16 +1,13 @@
 <template>
   <div class="layout">
     <header class="header">
-      <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
-      </strong>
       <nav class="nav">
-        <g-link class="nav__link" to="/">
+        <g-tag-link to="/">
           Home
-        </g-link>
-        <g-link class="nav__link" to="/about/">
+        </g-tag-link>
+        <g-tag-link to="/about/">
           About
-        </g-link>
+        </g-tag-link>
       </nav>
       <slot />
     </header>
@@ -24,5 +21,15 @@
     }
   }
 </static-query>
+
+<script lang="ts">
+import Vue from 'vue'
+import GTagLink from '~/components/atmos/GTagLink.vue'
+export default Vue.extend({
+  components: {
+    GTagLink
+  }
+})
+</script>
 
 <style></style>

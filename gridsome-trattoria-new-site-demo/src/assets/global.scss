@@ -1,3 +1,4 @@
+// ベース
 :root {
   /* main colors */
   --color-primary: #00b3ff;
@@ -15,19 +16,18 @@
   src: local("Yu Gothic Bold");
   font-weight: bold;
 }
-
 html {
   font-family: YuGothic, /* For Mac */ "Yu Gothic M", "Yu Gothic Medium",
     /* For Windows Firefox, Edge, IE */ "Hiragino Kaku Gothic ProN",
     "Hiragino Kaku Gothic Pro", /* For Mac Fallback */ Meiryo,
     /* For Windows Fallback (Chrome) */ sans-serif;
 }
-
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
 }
 
+// ボタンのスタイリング
 .el_btn {
   display: inline-block;
   width: 200px;
@@ -50,6 +50,7 @@ body {
   }
 }
 
+// タグのスタイリング
 .el_tag {
   display: inline-block;
   padding: 0.3em 0.9em;
@@ -61,10 +62,7 @@ body {
   transition: 0.25s;
   background-color: var(--color-text);
   color: var(--color-bg);
-}
-
-a {
-  &.el_tag {
+  &.el_tag__link {
     &:hover,
     &:focus {
       background-color: var(--color-bg);
@@ -72,4 +70,13 @@ a {
       border-color: currentColor;
     }
   }
+}
+
+// 見出しのスタイリング
+.el_level1Heading {
+  padding: 30px 10px;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  font-size: 1.75rem;
+  text-align: left;
 }
