@@ -5,6 +5,11 @@
   --color-secondary: #80d9ff;
   --color-text: #3f3f3f;
   --color-bg: #f0f0f0;
+
+  /* font sizes */
+  --font-size-body: 0.85rem;
+  --font-size-h1: 1.75rem;
+  --font-size-h2: 1.6rem;
 }
 
 @font-face {
@@ -25,6 +30,7 @@ html {
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
+  font-size: var(--font-size-body);
 }
 
 // ボタンのスタイリング
@@ -74,9 +80,28 @@ body {
 
 // 見出しのスタイリング
 .el_level1Heading {
-  padding: 30px 10px;
-  background-color: var(--color-primary);
-  color: var(--color-bg);
-  font-size: 1.75rem;
+  padding: 0px 20px;
+  color: var(--color-primary);
+  font-size: var(--font-size-h1);
   text-align: left;
+  span {
+    position: relative;
+    display: inline-block;
+    transform: translateY(-20%);
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 80px;
+      height: 2px;
+      background-color: currentColor;
+    }
+  }
+}
+.el_level2Heading {
+  padding-bottom: 10px;
+  border-bottom: 4px solid var(--color-primary);
+  font-size: var(--font-size-h2);
+  font-weight: bold;
 }

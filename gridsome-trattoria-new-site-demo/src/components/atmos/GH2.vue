@@ -1,7 +1,7 @@
 <template>
-  <h1 class="el_level1Heading">
-    <span><slot /></span>
-  </h1>
+  <h2 class="el_level2Heading">
+    <slot />
+  </h2>
 </template>
 
 <script lang="ts">
