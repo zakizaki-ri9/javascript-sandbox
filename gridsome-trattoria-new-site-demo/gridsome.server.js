@@ -1,13 +1,23 @@
-// Server API makes it possible to hook into various parts of Gridsome
-// on server-side and add custom data to the GraphQL data layer.
-// Learn more: https://gridsome.org/docs/server-api/
+const microCmsFetch = async () => {
+  require('dotenv').config()
 
-// Changes here require a server restart.
-// To restart press CTRL + C in terminal and run `gridsome develop`
+  const axios = require('axios')
+  const headers = {
+    'X-API-KEY': process.env.MICROCMS_API_KEY
+  }
+  return await axios.get('https://zakizaki-test.microcms.io/api/v1/blog', {
+    headers
+  })
+}
 
 module.exports = function (api) {
-  api.loadSource(() => {
-    // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
+  api.loadSource(async (actions) => {
+    const { data } = await microCmsFetch()
+
+    const collection = actions.addCollection('microCms')
+    collection.addNode({
+      context: data.context
+    })
   })
 
   api.createPages(() => {

@@ -18,5 +18,8 @@
     "./plugins/**/*",
     "./gridsome.config.js",
     "./gridsome.server.js"
-  ]
+  ],
+  "parserOptions": {
+    "extraFileExtensions": [".vue"]
+  }
 }
