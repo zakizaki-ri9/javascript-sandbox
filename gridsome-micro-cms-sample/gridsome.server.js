@@ -1,25 +1,26 @@
-// microCmSから
-const microCmsFetch = async () => {
-  require('dotenv').config()
+const { microCmsContentsAllFetch } = require('./server/microcms.js')
 
-  const axios = require('axios')
-  const headers = {
-    'X-API-KEY': process.env.MICROCMS_API_KEY
-  }
-  return await axios.get(process.env.MICROCMS_URL, {
-    headers
-  })
-}
-
-module.exports = function (api) {
+module.exports = (api) => {
   api.loadSource(async (actions) => {
-    const { data } = await microCmsFetch()
+    const contents = await microCmsContentsAllFetch()
 
+    // GraphQLのスキーマ追加
     const collection = actions.addCollection('microCms')
-    collection.addNode({
-      context: data.context
-    })
+    for (const content of contents) {
+      collection.addNode(content)
+    }
   })
 
-  api.createPages(() => {})
+  api.createPages(async ({ createPage }) => {
+    const contents = await microCmsContentsAllFetch()
+
+    // MicroCmsから取得した内容を元にページ生成
+    for (const content of contents) {
+      createPage({
+        path: content.path,
+        component: './src/templates/Post.vue',
+        context: content
+      })
+    }
+  })
 }
