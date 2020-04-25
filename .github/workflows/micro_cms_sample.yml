@@ -2,6 +2,8 @@ name: microCMS Now Deploy
 on:
   # push時の条件
   push:
+    branches:
+      - master
     paths:
       - "gridsome-micro-cms-sample/**"
       - ".github/workflows/micro_cms_sample.yml"
@@ -14,10 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-          cd gridsome-micro-cms-sample
       - uses: amondnet/now-deployment@v2
         with:
           zeit-token: ${{ secrets.MICROCMS_SAMPLE_NOW_ZEIT_TOKEN }}
+          now-args: "--prod"
           now-org-id: ${{ secrets.MICROCMS_SAMPLE_NOW_ORG_ID }}
           now-project-id: ${{ secrets.MICROCMS_SAMPLE_NOW_PROJECT_ID }}
+          working-directory: "gridsome-micro-cms-sample"
