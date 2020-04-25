@@ -19,7 +19,6 @@ jobs:
       - uses: amondnet/now-deployment@v2
         with:
           zeit-token: ${{ secrets.MICROCMS_SAMPLE_NOW_ZEIT_TOKEN }}
-          now-args: "--prod"
           now-org-id: ${{ secrets.MICROCMS_SAMPLE_NOW_ORG_ID }}
           now-project-id: ${{ secrets.MICROCMS_SAMPLE_NOW_PROJECT_ID }}
           working-directory: "gridsome-micro-cms-sample"
