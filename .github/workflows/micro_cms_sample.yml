@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "gridsome-micro-cms-sample/**"
+      - ".github/workflows/micro_cms_sample.yml"
   # microCMSが更新されたときの条件
   repository_dispatch:
     types: [micro_cms_updated]
