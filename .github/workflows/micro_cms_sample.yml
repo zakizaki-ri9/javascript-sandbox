@@ -16,6 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          repository: "master"
       - uses: amondnet/now-deployment@v2
         with:
           zeit-token: ${{ secrets.MICROCMS_SAMPLE_NOW_ZEIT_TOKEN }}
