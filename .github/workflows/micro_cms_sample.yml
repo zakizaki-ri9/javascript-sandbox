@@ -18,6 +18,8 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: "master"
+      - run: |
+          cd gridsome-micro-cms-sample
       - uses: amondnet/now-deployment@v2
         with:
           zeit-token: ${{ secrets.MICROCMS_SAMPLE_NOW_ZEIT_TOKEN }}
