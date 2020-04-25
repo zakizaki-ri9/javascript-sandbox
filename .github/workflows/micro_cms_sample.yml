@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          repository: "master"
+          ref: "master"
       - uses: amondnet/now-deployment@v2
         with:
           zeit-token: ${{ secrets.MICROCMS_SAMPLE_NOW_ZEIT_TOKEN }}
