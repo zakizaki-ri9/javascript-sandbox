@@ -25,10 +25,10 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { createComponent } from '@vue/composition-api'
 import Logo from '~/components/Logo.vue'
 
-export default Vue.extend({
+export default createComponent({
   components: {
     Logo
   }

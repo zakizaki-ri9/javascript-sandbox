@@ -1,4 +1,6 @@
-export default {
+import { Configuration } from '@nuxt/types'
+
+const config: Configuration = {
   mode: 'spa',
   /*
    ** Headers of the page
@@ -46,3 +48,5 @@ export default {
     // extend(config, ctx) {}
   }
 }
+
+export default config
