@@ -1,4 +1,7 @@
 import { Configuration } from '@nuxt/types'
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+})
 
 const config: Configuration = {
   mode: 'spa',
@@ -37,7 +40,7 @@ const config: Configuration = {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/pwa'],
+  modules: ['@nuxtjs/dotenv', '@nuxtjs/onesignal', '@nuxtjs/pwa'],
   /*
    ** Build configuration
    */
@@ -46,6 +49,21 @@ const config: Configuration = {
      ** You can extend webpack config here
      */
     // extend(config, ctx) {}
+  },
+  oneSignal: {
+    init: {
+      appId: process.env.ONESIGNAL_APP_ID,
+      allowLocalhostAsSecureOrigin: true,
+      welcomeNotification: {
+        disable: false
+      }
+    },
+    importScripts: ['sw.js']
+  },
+  pwa: {
+    workbox: {
+      dev: true
+    }
   }
 }
 
