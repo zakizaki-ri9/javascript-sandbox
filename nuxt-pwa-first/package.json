@@ -10,7 +10,7 @@
     "start": "nuxt-ts start",
     "generate": "nuxt-ts generate",
     "lint": "eslint --ext .js,.vue,.ts --ignore-path .gitignore .",
-    "deploy": "now"
+    "deploy": "vercel"
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "^0.4.6",
@@ -27,7 +27,7 @@
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-nuxt": ">=0.4.2",
     "eslint-plugin-prettier": "^3.1.2",
-    "now": "^19.0.1",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "vercel": "^19.0.1"
   }
 }
