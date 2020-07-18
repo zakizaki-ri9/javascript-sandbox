@@ -47,7 +47,7 @@ export default {
     async onCopyClicked() {
       try {
         // Clipboardへの書き込み
-        await navigator.clipboard.text.write(this.text.write)
+        await navigator.clipboard.writeText(this.text.write)
       } catch (e) {
         console.error(e)
       } finally {

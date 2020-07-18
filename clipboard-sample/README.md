@@ -1,29 +1,19 @@
-# clipboard-sample
+# クリップボードAPIのサンプル
 
-## Project setup
-```
-yarn install
-```
+- サンプル https://clipboard-sample.vercel.app/
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+## 実行手順
 
-### Compiles and minifies for production
-```
-yarn run build
+```bash
+npm i
+npm run serve
 ```
 
-### Run your tests
-```
-yarn run test
+### Vercelにデプロイしたい場合
+
+```bash
+npm i
+vercel
 ```
 
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+vercel側で`npm run build`してくれたHTMLをホスティングしてくれます。
