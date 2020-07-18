@@ -41,8 +41,8 @@ export default {
   },
   methods: {
     async updateClipboardPermissions() {
-      this.state.clipboardRead = (await navigator.permissions.query({name:'clipboard-read'})).state
-      this.state.clipboardWrite = (await navigator.permissions.query({name:'clipboard-write'})).state
+      this.state.clipboardRead = (await navigator.permissions.query({ name:'clipboard-read' })).state
+      this.state.clipboardWrite = (await navigator.permissions.query({ name:'clipboard-write' })).state
     },
     async onCopyClicked() {
       try {
