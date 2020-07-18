@@ -13,7 +13,7 @@ npm run serve
 
 ```bash
 npm i
-vercel
+npx vercel
 ```
 
 vercel側で`npm run build`してくれたHTMLをホスティングしてくれます。
